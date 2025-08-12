@@ -1,0 +1,307 @@
+/* body {
+  background-color: rgb(0, 0, 0);
+} */
+
+.allcards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  /* flex-wrap: wrap; */
+  padding: 40px;
+  flex-direction: row;
+  /* border: 2px solid red; */
+  gap: 40px;
+  /* padding: 50px; */
+}
+
+.card {
+  background-color: white;
+  /* box-shadow: 50px black; */
+  width: 30vw;
+  height: 95vh;
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* padding-bottom: 50px;
+  padding-bottom: 50px; */
+  align-items: center;
+  box-shadow: 5px 5px 20px gray;
+  border-radius: 20px;
+}
+
+/* .wholepage {
+  display: flex;
+  flex-direction: wrap;
+  border: 5px solid black;
+  height: 420px;
+} */
+
+.imageincard {
+  height: 20vh;
+  width: 10vw;
+  /* background-color: grey; */
+}
+
+.protitle {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 1.8vh;
+  /* border: 2px solid red; */
+  margin-left: 40px;
+  margin-right: 40px;
+  text-align: center;
+}
+.cardcontainer2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 20vw;
+  height: 9vh;
+  margin-top: 20px;
+  /* border: 2px solid red; */
+}
+
+.carddescription {
+  width: 18vw;
+  text-align: justify;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
+  font-size: 10px;
+}
+.cardprice {
+  width: 18vw;
+  text-align: justify;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
+  font-size: 20px;
+  font-weight: bold;
+}
+.cardcategory {
+  width: 18vw;
+  text-align: justify;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(93, 93, 93);
+}
+
+.cardrating {
+  width: 18vw;
+  text-align: justify;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
+  font-size: 12px;
+  font-weight: normal;
+}
+.cardbuttoncontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* gap: 10px; */
+  justify-content: end;
+  width: 12vw;
+  height: 6.4vh;
+  /* border: 1px solid black; */
+  text-align: justify;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
+  font-size: 12px;
+  font-weight: normal;
+  background-color: rgb(144, 4, 4);
+  border-radius: 20px;
+  margin-top: 40px;
+  border-radius: 10px;
+}
+
+.cardbutton {
+  border: none;
+  color: white;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.cardbuttoncontainer button {
+  background-color: rgb(144, 4, 4);
+  border-radius: 5px;
+  width: 10vw;
+}
+
+.header {
+  width: full;
+  height: 10vh;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(144, 4, 4);
+  color: whitesmoke;
+  justify-content: end;
+  align-items: center;
+  gap: 450px;
+  padding-right: 100px;
+}
+.circlevalue {
+  background-color: whitesmoke;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+}
+
+.carticoncontainer {
+  position: relative; /* important for absolute positioning inside */
+  display: inline-block;
+}
+
+.carticoncontainer i {
+  position: relative;
+  z-index: 1; /* icon sits under the badge */
+}
+
+.circlevalue {
+  position: absolute;
+  top: -10px; /* adjust to your liking */
+  right: -15px; /* adjust to your liking */
+  background-color: whitesmoke;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+  height: 20px;
+  width: 10px;
+  z-index: 2; /* sits above the icon */
+}
+.circlevalue p {
+  position: absolute;
+  color: red;
+  font-size: 20px;
+  top: -20px; /* adjust to your liking */
+  /* right: -px; */
+}
+/* Laptops (max-width: 1440px) */
+@media (max-width: 1440px) {
+  .allcards {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    padding: 2.5rem;
+    gap: 2rem;
+  }
+
+  .card {
+    max-width: 380px;
+    padding: 1.5rem;
+  }
+
+  .imageincard {
+    max-width: 270px;
+  }
+
+  .cardbuttoncontainer {
+    justify-content: flex-end;
+  }
+}
+
+/* Tablets and small desktops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .allcards {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  .card {
+    max-width: 400px;
+    padding: 1.5rem;
+  }
+
+  .imageincard {
+    max-width: 250px;
+  }
+
+  .cardbuttoncontainer {
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 600px) {
+  .allcards {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 1rem;
+  }
+
+  .imageincard {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    object-fit: contain;
+  }
+
+  .protitle {
+    font-size: 1.25rem;
+    margin: 0.5rem 0 1rem 0;
+    font-weight: 600;
+  }
+
+  .carddescription,
+  .cardcategory,
+  .cardrating {
+    font-size: 0.875rem;
+  }
+
+  .cardprice {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .cardbuttoncontainer {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .cardbuttoncontainer button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    background-color: rgb(144, 4, 4);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .cardbuttoncontainer button:hover {
+    background-color: rgb(180, 20, 20);
+  }
+
+  .header {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    height: auto;
+  }
+
+  .circlevalue {
+    top: -8px;
+    right: -12px;
+    height: 24px;
+    width: 24px;
+    font-size: 0.875rem;
+  }
+
+  .circlevalue p {
+    top: -20px;
+    font-size: 1.25rem;
+    color: red;
+  }
+}
