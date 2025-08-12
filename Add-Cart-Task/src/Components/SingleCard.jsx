@@ -1,78 +1,48 @@
-import React from "react";
-import { Box, Paper, Stack, Typography } from "@mui/material";
-// import "../App.css";
-// import css from "@mui/material";
+import React, { useState } from "react";
 
-function SingleCard({ carddetails }) {
+function SingleCard({ carddetails, onCartChange }) {
+  const [clicked, setClicked] = useState(false); // false = Add to Cart
+
+  const handleClick = () => {
+    const newClicked = !clicked;
+    setClicked(newClicked);
+
+    if (typeof onCartChange === "function") {
+      onCartChange(newClicked ? 1 : -1);
+    }
+  };
+
   return (
-    <div>
-      <div className="card">
-        <img className="imageincard" src={carddetails.image} alt="" />
-        <div className="cardcontainer2">
-          <p className="protitle">{carddetails.title}</p>
-        </div>
+    <div className="card">
+      <img className="imageincard" src={carddetails.image} alt="" />
+      <p className="protitle">{carddetails.title}</p>
+      <p className="carddescription">{carddetails.description}</p>
+      <p className="cardcategory">Category: {carddetails.category}</p>
+      <p className="cardprice">${carddetails.price} </p>
+      <p className="cardrating">Rating: {carddetails.rating?.rate}</p>
+      <p
+        style={{
+          color: "red",
+        }}
+        className="cardrating"
+      >
+        {" "}
+        only {carddetails.rating?.count} left!
+      </p>
 
-        <p className="carddescription">{carddetails.description}</p>
-        <p className="cardcategory"> Category : {carddetails.category}</p>
-        <p className="cardprice"> ${carddetails.price}</p>
-        <p className="cardrating"> Rating: {carddetails.rating?.rate}</p>
-        <p className="cardrating">{carddetails.rating?.count} left</p>
-        <div className="cardrating"></div>
-        <div className="cardbuttoncontainer">
-          <i
-            className="fa-solid fa-shopping-cart fa-lg"
-            style={{
-              color: "white",
-            }}
-          ></i>
-          <button className="cardbutton">Add to Cart</button>
-        </div>
+      <div className="cardbuttoncontainer">
+        <i
+          className="fa-solid fa-shopping-cart fa-lg"
+          style={{ color: clicked ? "gray" : "white" }}
+        ></i>
+
+        <button className="cardbutton" onClick={handleClick}>
+          <p style={{ color: clicked ? "gray" : "white" }}>
+            {clicked ? "Remove from Cart" : "Add to Cart"}
+          </p>
+        </button>
       </div>
     </div>
-    // <Box>
-    //   <Paper
-    //     // className="wholepage"
-    //     elevation={3}
-    //     sx={{
-    //       display: "flex",
-    //       flexDirection: "column",
-    //       cursor: "pointer",
-    //       height: "600px",
-    //       width: "300px",
-    //       padding: "20px",
-    //     }}
-    //   >
-    //     <Stack spacing={4}>
-    //       <Paper elevation={3} sx={{ padding: "10px" }}>
-    //         <img
-    //           src={carddetails.image}
-    //           alt={carddetails.title}
-    //           style={{ width: "150px", height: "auto" }}
-    //         />
-    //         <Typography
-    //           style={{
-    //             fontSize: "20px",
-    //           }}
-    //         >
-    //           {carddetails.title}
-    //         </Typography>
-    //         <Typography
-    //           style={{
-    //             fontSize: "8px",
-    //           }}
-    //         >
-    //           {carddetails.description}
-    //         </Typography>
-    //       </Paper>
-    //       <Box>
-    //         <Typography> {carddetails.category}</Typography>
-    //         <Typography>Price: ${carddetails.price}</Typography>
-    //         <Typography> Rating: {carddetails.rating?.rate}</Typography>
-    //         <Typography>Count: {carddetails.rating?.count}</Typography>
-    //       </Box>
-    //     </Stack>
-    //   </Paper>
-    // </Box>
   );
 }
 

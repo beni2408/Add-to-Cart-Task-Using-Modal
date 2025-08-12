@@ -1,12 +1,68 @@
-# React + Vite
+# Add to Cart React App using Modal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Description
 
-Currently, two official plugins are available:
+This is a React-based shopping cart application that fetches products from the **Fake Store API** and allows users to add items to their cart.  
+It includes a **modal** to display cart items, shows the cart count in the navbar, and allows removal of products from the cart. The application is fully responsive for both desktop and mobile.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Fetch products from **Fake Store API**
+- Display product details: image, title, price
+- Responsive product listing grid
+- Add items to cart with duplicate item alert
+- Navbar shows cart item count
+- View cart in a **modal** popup
+- Remove items from cart inside the modal
+- Fully responsive design
+
+---
+
+## 🛠 Tech Stack
+
+- **ReactJS**
+- **HTML5**
+- **CSS3** / **Tailwind CSS**
+- **JavaScript (ES6)**
+
+---
+
+## 🌐 API Used
+
+- **Fake Store API:** [https://fakestoreapi.com/]('https://fakestoreapi.com/products')
+
+---
+
+## 🔗 Netlify Link
+
+- **Netlify Link:** [https://fakestoreapi.com/]('https://fakestoreapi.com/products')
+
+---
+
+## 🔗 GitHub Link
+
+- **GitHubLink:** [https://github.com/beni2408/Add-to-Cart-Task-Using-Modal.git]
+
+---
+
+## 📂 Folder Structure
+
+Add-Cart-Task
+│
+├── src/
+│ ├── components/
+│ │ ├── Cards.jsx
+│ │ ├── SingleCard.jsx
+│ │
+│ ├── App.jsx
+│ ├── index.css
+│ ├── main.jsx
+│ └── App.css
+│
+│
+├── package.json
+├── package-lock.json
+├── index.html
+└── README.md

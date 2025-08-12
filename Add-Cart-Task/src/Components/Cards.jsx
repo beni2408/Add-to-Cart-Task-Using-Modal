@@ -1,15 +1,18 @@
 import React from "react";
-// import { Typography } from "@mui/material";
-// import "../App.css";
 import SingleCard from "./SingleCard";
 
-function Cards({ apiparstDataprops }) {
+function Cards({ apiparstDataprops, onCartChange }) {
   return (
     <div className="allcards">
-      {apiparstDataprops?.map((details) => (
-        <SingleCard carddetails={details} key={details.idx} />
+      {apiparstDataprops.map((carddetails) => (
+        <SingleCard
+          key={carddetails.id}
+          carddetails={carddetails}
+          onCartChange={onCartChange} // <<— pass handler down
+        />
       ))}
     </div>
   );
 }
+
 export default Cards;
