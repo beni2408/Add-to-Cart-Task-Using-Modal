@@ -2,7 +2,7 @@
 
 ## 📌 Description
 
-This is a React-based shopping cart application that fetches products from the **Fake Store API** and allows users to add items to their cart.  
+This is a React-based shopping cart application that fetches products from the **Fake Store API** and allows users to add items to their cart.
 It includes a **modal** to display cart items, shows the cart count in the navbar, and allows removal of products from the cart. The application is fully responsive for both desktop and mobile.
 
 ---
